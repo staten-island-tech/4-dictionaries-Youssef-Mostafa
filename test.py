@@ -16,12 +16,48 @@ total of the cart. """
 
 # part one of dictionary project
 
-item = {
+cleanly_bundle = {
     "name": "Method Men Sea Surf Body Wash & Glacier + Granite Shampoo",
     "price": 14.39,
     "department": "Hygiene",
-    "description": "Bundle of cool glacier shampoo and crisp, salty body wash by Method Men"
+    "description": "A special bundle of cool glacier shampoo and crisp, salty body wash by Method Men"
+}
+
+tv = {
+    "name": "LG 86 4K UHD UA75 AI Smart TV",
+    "price": 798.00,
+    "department": "Entertainment",
+    "description": "Really smooth and high quality video enhanced with AI and a smart TV microchip"
 }
 
 
-Walmart = [item]
+vacuum = {
+    "name": "Dyson V11 Extra Cordless Vacuum Cleaner",
+    "price": 449.99,
+    "department": "Housekeeping",
+    "description": "Lightweight, cordless vacuum that has no touch bin emptying and wall mounting and charging"
+}
+
+washing_machine = {
+    "name": "28 Wide 4.8 Cu Ft. Front Loading Washing Machines Washer - White",
+    "price": 779.00,
+    "department": "Washing",
+    "description": "High efficeincy washing machine win 10 wash cycles and quite washing."
+}
+
+
+Walmart = [cleanly_bundle, tv, vacuum, washing_machine]
+
+for index, item in enumerate(Walmart, start = 1):
+    print(index, ":", item["name"])
+purchase = input("What item number would do you want to purchase?")
+purchase = int(purchase)
+confirmation = input(f"You have chose {Walmart[purchase]["name"]}. Are you sure you would like to purchase this?")
+
+if confirmation == "yes" or "y":
+    print("Your purchase was successful. Thank you.")
+elif confirmation == "no" or "n":
+    print("Your purchase has been cancelled. Come again next time.")
+
+
+
