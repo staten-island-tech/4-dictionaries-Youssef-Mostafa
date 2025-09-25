@@ -46,9 +46,10 @@ washing_machine = {
 }
 
 
-Walmart = [cleanly_bundle, tv, vacuum, washing_machine]
+Walmart = [None, cleanly_bundle, tv, vacuum, washing_machine]
 
-for index, item in enumerate(Walmart, start = 1):
+
+for index, item in enumerate(Walmart[1:], start = 1):
     print(index, ":", item["name"])
 purchase = input("What item number would do you want to purchase?")
 purchase = int(purchase)
@@ -58,6 +59,8 @@ if confirmation == "yes" or "y":
     print("Your purchase was successful. Thank you.")
 elif confirmation == "no" or "n":
     print("Your purchase has been cancelled. Come again next time.")
+else:
+    print("That is not a valid option.")
 
 
 
