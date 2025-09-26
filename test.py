@@ -16,7 +16,7 @@ total of the cart. """
 
 # part one of dictionary project
 
-cleanly_bundle = {
+""" cleanly_bundle = {
     "name": "Method Men Sea Surf Body Wash & Glacier + Granite Shampoo",
     "price": 14.39,
     "department": "Hygiene",
@@ -49,15 +49,70 @@ washing_machine = {
 Walmart = [cleanly_bundle, tv, vacuum, washing_machine]
 
 for index, item in enumerate(Walmart, start = 1):
-    print(index, ":", item["name"])
+    print(index, ":", item)
 purchase = input("What item number would do you want to purchase?")
 purchase = int(purchase)
+purchase = purchase - 1
 confirmation = input(f"You have chose {Walmart[purchase]["name"]}. Are you sure you would like to purchase this?")
 
-if confirmation == "yes" or "y":
+if confirmation == "yes" or confirmation == "y":
     print("Your purchase was successful. Thank you.")
-elif confirmation == "no" or "n":
+elif confirmation == "no" or confirmation == "n":
     print("Your purchase has been cancelled. Come again next time.")
+else:
+    print("That is not a valid input. Try again.") """
 
 
+# part two of dictionary project
 
+Walmart = [{
+    "name": "Method Men Sea Surf Body Wash & Glacier + Granite Shampoo",
+    "price": 14.39,
+    "department": "Hygiene",
+    "description": "A special bundle of cool glacier shampoo and crisp, salty body wash by Method Men"
+}
+
+,{
+    "name": "LG 86 4K UHD UA75 AI Smart TV",
+    "price": 798.00,
+    "department": "Entertainment",
+    "description": "Really smooth and high quality video enhanced with AI and a smart TV microchip"
+}
+
+
+,{
+    "name": "Dyson V11 Extra Cordless Vacuum Cleaner",
+    "price": 449.99,
+    "department": "Housekeeping",
+    "description": "Lightweight, cordless vacuum that has no touch bin emptying and wall mounting and charging"
+}
+
+,{
+    "name": "28 Wide 4.8 Cu Ft. Front Loading Washing Machines Washer - White",
+    "price": 779.00,
+    "department": "Washing",
+    "description": "High efficeincy washing machine win 10 wash cycles and quite washing."
+}]
+
+
+checkout = "Not finished."
+confirmation = "Not done choosing."
+cart = ["Cart printed"]
+while checkout is not "Done":
+    for index, item in enumerate(Walmart, start = 1):
+        print(index, ":", item)
+    print(f"{len(Walmart) + 1 } : View Cart")
+    purchase = input("What item number would do you want to purchase? Or would you like to view cart?")
+    if purchase == len(Walmart) + 1:
+        print(cart)
+    elif purchase.isdigit:
+        purchase = int(purchase)
+        purchase = purchase - 1
+        confirmation = input(f"You have chose {Walmart[purchase]["name"]}. Are you sure you would like to purchase this?")
+        if confirmation == "yes" or confirmation == "y":
+            print("Your item has been added to cart. You may continue browsing.")
+            cart.append(purchase)
+        elif confirmation == "no" or confirmation == "n":
+            print("Your ietm was not added to cart. You may continue browsing.")
+        else:
+            print("That is not a valid input. Try again.")
