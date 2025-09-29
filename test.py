@@ -105,7 +105,7 @@ checkout = "Not finished."
 confirmation = "Not done choosing."
 total = 0
 cart = []
-while checkout is not "Done":
+while checkout is not "y" or not "yes":
     for index, item in enumerate(Walmart, start = 1):
         print(index, ":", item)
     print(f"{len(Walmart) + 1 } : View Cart")
@@ -134,3 +134,5 @@ while checkout is not "Done":
             print("Your ietm was not added to cart. You may continue browsing.")
         else:
             print("That is not a valid input. Try again.")
+
+            
