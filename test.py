@@ -103,21 +103,33 @@ Walmart = [{
 
 checkout = "Not finished."
 confirmation = "Not done choosing."
-cart = ["Cart printed"]
+total = 0
+cart = []
 while checkout is not "Done":
     for index, item in enumerate(Walmart, start = 1):
         print(index, ":", item)
     print(f"{len(Walmart) + 1 } : View Cart")
+    print(f"{len(Walmart) + 2 } : Checkout")
     purchase = input("What item number would do you want to purchase? Or would you like to view cart?")
+    purchase = int(purchase)
     if purchase == len(Walmart) + 1:
         print(cart)
-    elif purchase.isdigit:
+    elif purchase == len(Walmart) +2:
+        print(f"Items: {cart}. Total: {total}")
+        checkout = input("Do you want to check out?")
+        if checkout == "no" or checkout == "n":
+            print("Your purchase has been cancelled.")
+            quit()
+
+    else:
         purchase = int(purchase)
         purchase = purchase - 1
         confirmation = input(f"You have chose {Walmart[purchase]["name"]}. Are you sure you would like to purchase this?")
         if confirmation == "yes" or confirmation == "y":
             print("Your item has been added to cart. You may continue browsing.")
-            cart.append(purchase)
+            cart.append(Walmart[purchase]["name"])
+            print(cart)
+            total = total + Walmart[purchase]['price']
         elif confirmation == "no" or confirmation == "n":
             print("Your ietm was not added to cart. You may continue browsing.")
         else:
