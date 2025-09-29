@@ -48,14 +48,13 @@ washing_machine = {
 
 Walmart = [None, cleanly_bundle, tv, vacuum, washing_machine]
 
-<<<<<<< HEAD
+
 for index, item in enumerate(Walmart, start = 1):
     print(index, ":", item)
-=======
+
 
 for index, item in enumerate(Walmart[1:], start = 1):
-    print(index, ":", item["name"])
->>>>>>> 7e4f9b349311a94e7e15f7d10ae20486e112c6da
+    print(index, ":", item["name"]
 purchase = input("What item number would do you want to purchase?")
 purchase = int(purchase)
 purchase = purchase - 1
@@ -66,11 +65,8 @@ if confirmation == "yes" or confirmation == "y":
 elif confirmation == "no" or confirmation == "n":
     print("Your purchase has been cancelled. Come again next time.")
 else:
-<<<<<<< HEAD
     print("That is not a valid input. Try again.") """
-=======
-    print("That is not a valid option.")
->>>>>>> 7e4f9b349311a94e7e15f7d10ae20486e112c6da
+
 
 
 # part two of dictionary project
