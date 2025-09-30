@@ -85,7 +85,6 @@ Walmart = [{
     "description": "Really smooth and high quality video enhanced with AI and a smart TV microchip"
 }
 
-
 ,{
     "name": "Dyson V11 Extra Cordless Vacuum Cleaner",
     "price": 449.99,
@@ -97,7 +96,49 @@ Walmart = [{
     "name": "28 Wide 4.8 Cu Ft. Front Loading Washing Machines Washer - White",
     "price": 779.00,
     "department": "Washing",
-    "description": "High efficeincy washing machine win 10 wash cycles and quite washing."
+    "description": "High efficiency washing machine win 10 wash cycles and quiet washing."
+}
+
+,{
+    "name": "Mecity 4-Slice Touchscreen Toaster, Stainless Steel",
+    "price": 79.99,
+    "department": "Cooking",
+    "description": "Has 6 different toasting settings with a fully function touchscreen display and easy cleaning."
+}
+
+,{
+    "name": "COWIN Bluetooth Headphones Active Noise Cancelling Headphones Wireless Headphones",
+    "price": 21.99,
+    "department": "Devices",
+    "description": "Bluetooth headphones with comfortable ear cushions and active noise cancelling."
+}
+
+,{
+    "name": "SteelSeries Apex 3 TKL RGB Gaming Keyboard ",
+    "price": 34.99,
+    "department": "Gaming",
+    "description": "Compact, water and dust resistant RGB keyboard with durable switches."
+}
+
+,{
+    "name": "Suevery Gaming PC, AMD Ryzen 5 5600GT, Vega 7 Graphics, 16GB DDR4 RAM, 512GB SSD, Wi-Fi 6-White",
+    "price": 465.99,
+    "department": "Gaming",
+    "description": "Fast 5600Gt processor for, Vega 7 graphics, and tons of storage and ram for an immersive and smooth gameplay experience."
+}
+
+,{
+    "name": "LOLYKITCH Tri-Ply Stainless Steel Pan Set, 8.5-Inch, 10-Inch, 12-Inch Chef & Frying Pan",
+    "price": 59.99,
+    "department": "Cooking",
+    "description": "A set of 3 frying pans that are induction and oven safe. Durable and long lasting."
+}
+
+,{
+    "name": "Yelomin Magnetic Portable Charger, 10000mAh Magsafe Power Bank",
+    "price": 22.99,
+    "department": "Devices",
+    "description": "A portable charger with strong magsafe and a build in USB-C charger and other chargers for all phones."
 }]
 
 
@@ -110,28 +151,30 @@ while checkout is not "y" or not "yes":
         print(index, ":", item)
     print(f"{len(Walmart) + 1 } : View Cart")
     print(f"{len(Walmart) + 2 } : Checkout")
-    purchase = input("What item number would do you want to purchase? Or would you like to view cart?")
+    purchase = input("What item number would do you want to purchase? Or would you like to view cart and checkout?")
     purchase = int(purchase)
     if purchase == len(Walmart) + 1:
         print(cart)
     elif purchase == len(Walmart) +2:
         print(f"Items: {cart}. Total: {total}")
         checkout = input("Do you want to check out?")
-        if checkout == "no" or checkout == "n":
-            print("Your purchase has been cancelled.")
+        if checkout == "yes" or checkout == "y":
+            print("Your purchase has been confirmed. Thank you for shopping.")
             quit()
-
+        elif checkout == "no" or checkout == "n":
+            print("Your purchase has been cancelled. Please come again.")
+            quit()
+    
     else:
         purchase = int(purchase)
         purchase = purchase - 1
         confirmation = input(f"You have chose {Walmart[purchase]["name"]}. Are you sure you would like to purchase this?")
         if confirmation == "yes" or confirmation == "y":
-            print("Your item has been added to cart. You may continue browsing.")
+            print("Your item has been added to cart. You may continue browsing or checkout.")
             cart.append(Walmart[purchase]["name"])
-            print(cart)
             total = total + Walmart[purchase]['price']
         elif confirmation == "no" or confirmation == "n":
-            print("Your ietm was not added to cart. You may continue browsing.")
+            print("Your ietm was not added to cart. You may continue browsing or checkout.")
         else:
             print("That is not a valid input. Try again.")
 
